@@ -6,52 +6,7 @@ import { db } from "./firebase"
 import { collection, getDocs, addDoc, doc, deleteDoc } from "firebase/firestore"
 
 function App() {
-  let [items, setItems] = useState([
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-    {
-      title: "eat",
-      content: "food"
-    },
-  ]);
+  let [items, setItems] = useState([]);
   const notesRef = collection(db, "notes")
 
   useEffect(() => {
