@@ -8,15 +8,14 @@ import Loader from "./components/Loader";
 
 function App() {
   let [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const notesRef = collection(db, "notes")
 
   useEffect(() => {
     const getNotes = async () => {
-      setIsLoading(true)
       const data = await getDocs(notesRef);
       if (data) {
-        setIsLoading(false)
+        setIsLoading(false);
       }
       setItems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
