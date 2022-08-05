@@ -16,6 +16,7 @@ function App() {
     };
 
     getNotes();
+    // eslint-disable-next-line
   }, [items]);
 
   const addNote = async (note) => {
