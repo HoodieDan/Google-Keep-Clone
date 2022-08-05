@@ -4,14 +4,20 @@ import Note from "./components/Note";
 import CreateArea from "./components/CreateArea";
 import { db } from "./firebase"
 import { collection, getDocs, addDoc, doc, deleteDoc } from "firebase/firestore"
+import Loader from "./components/Loader";
 
 function App() {
   let [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const notesRef = collection(db, "notes")
 
   useEffect(() => {
     const getNotes = async () => {
+      setIsLoading(true)
       const data = await getDocs(notesRef);
+      if (data) {
+        setIsLoading(false)
+      }
       setItems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
@@ -34,6 +40,7 @@ function App() {
     <div>
       <Header />
       <CreateArea addItem={addNote} />
+      <Loader loading={isLoading} />
       <div className="cont">
         <div className="row container">
           {items.map((noteItem, index) => {

@@ -136,6 +136,36 @@ form .fab-button:hover {
   height: 30px;
 }
 
+/* Loader css */
+* {
+  box-sizing: border-box;
+}
+
+.static {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+div.loader {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  color: rgb(32 33 36);
+  padding: 20px
+}
+
+div.loader svg {
+  color: rgb(32 33 36);
+}
+
 @media (min-width: 768px) {
   .cont {
     display: flex;
