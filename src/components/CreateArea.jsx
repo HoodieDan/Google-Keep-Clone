@@ -31,7 +31,7 @@ function CreateArea(props) {
     <div className="container">
       <form>
         <input name="title" onChange={handleChange} placeholder="Title" value={note.title} style={{display: expand? "block": "none" }} />
-        <textarea name="content" onFocus={expansion} onBlur={collapse} onChange={handleChange} placeholder="Take a note..." rows={expand? "3": "1"} value={note.content} />
+        <textarea name="content" onFocus={expansion} onChange={handleChange} placeholder="Take a note..." rows={expand? "3": "1"} value={note.content} />
         <Fab onClick={(e) => {
           e.preventDefault()
           collapse()
