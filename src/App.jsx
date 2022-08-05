@@ -15,8 +15,9 @@ function App() {
       console.log(data)
       setItems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
+
     getNotes();
-  }, []);
+  }, [items]);
 
   const addNote = async (note) => {
     await addDoc((notesRef), {
