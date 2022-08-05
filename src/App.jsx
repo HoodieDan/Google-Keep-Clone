@@ -12,7 +12,6 @@ function App() {
   useEffect(() => {
     const getNotes = async () => {
       const data = await getDocs(notesRef);
-      console.log(data)
       setItems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
