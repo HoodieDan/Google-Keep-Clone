@@ -9,7 +9,10 @@ function Note(props) {
         <button onClick={(e) => {
           e.preventDefault()
           props.deleteItem(props.id)
-        }}><DeleteForeverIcon /></button>
+        }}
+        >
+          <DeleteForeverIcon />
+        </button>
       </div>
     </div>
   );
